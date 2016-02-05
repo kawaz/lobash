@@ -1,6 +1,6 @@
 #!/usr/bin/env bats
-lodash_path="$BATS_TEST_DIRNAME/../lobash.sh"
-. "$lodash_path"
+lobash_path="$BATS_TEST_DIRNAME/../lobash.sh"
+. "$lobash_path"
 
 @test "version_ge" {
   # 0 args

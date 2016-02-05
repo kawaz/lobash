@@ -1,11 +1,11 @@
 #!/usr/bin/env bats
-lodash_path="$BATS_TEST_DIRNAME/../lobash.sh"
-lodash_path_q=$(printf %q "$lodash_path")
+lobash_path="$BATS_TEST_DIRNAME/../lobash.sh"
+lobash_path_q=$(printf %q "$lobash_path")
 
 setup() {
   local tmp_PATH="$BATS_TMPDIR/${BATS_TEST_NAME}/${BATS_TEST_NUMBER}/bin"
   mkdir -p "$tmp_PATH"
-  cp "$lodash_path" "$tmp_PATH/lobash.sh"
+  cp "$lobash_path" "$tmp_PATH/lobash.sh"
   chmod 755 "$tmp_PATH/lobash.sh"
   export PATH="$tmp_PATH:$PATH"
 }
