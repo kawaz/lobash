@@ -1,5 +1,6 @@
 #!/bin/bash
-: "1.0.0"; eval "[[ -n \"\$LOBASH_VERSION\" ]] && lo.version_ge \"\$LOBASH_VERSION\" $_ && return; LOBASH_VERSION=$_"
+v="1.0.0" \
+  eval "[[ -n '$LOBASH_VERSION' ]] && lo.version_ge $LOBASH_VERSION \$v && return; LOBASH_VERSION=\$v"
 
 lo.version_ge() {
   if [[ $# == 1 ]]; then
