@@ -1,5 +1,6 @@
 #!/usr/bin/env bats
-. ../lobash.sh
+lodash_path="$BATS_TEST_DIRNAME/../lobash.sh"
+. "$lodash_path"
 
 setup() {
   true
