@@ -2,14 +2,6 @@
 lodash_path="$BATS_TEST_DIRNAME/../lobash.sh"
 . "$lodash_path"
 
-setup() {
-  true
-}
-
-teardown() {
-  true
-}
-
 @test "version_ge" {
   # 0 args
   ! lo.version_ge
