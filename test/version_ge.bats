@@ -1,5 +1,6 @@
 #!/usr/bin/env bats
 lobash_path="$BATS_TEST_DIRNAME/../lobash.sh"
+# shellcheck source=../lobash.sh
 . "$lobash_path"
 
 @test "version_ge" {

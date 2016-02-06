@@ -2,12 +2,14 @@
 lobash_path="$BATS_TEST_DIRNAME/../lobash.sh"
 lobash_path_q=$(printf %q "$lobash_path")
 
+# shellcheck disable=SC1090
 @test "lobash sourced once" {
   [[ -z $LOBASH_VERSION ]]
   . "$lobash_path"
   [[ -n $LOBASH_VERSION ]]
 }
 
+# shellcheck disable=SC1090
 @test "if same verision lobash sourced twice then skip second loading and return 0." {
   [[ -z $LOBASH_VERSION ]]
 
@@ -41,6 +43,7 @@ lobash_path_q=$(printf %q "$lobash_path")
   [[ $vout != *"lo.version_ge() {"* ]]
 }
 
+# shellcheck disable=SC1090,SC2030
 @test "if older verision lobash sourced then skip second loading and return 0." {
   [[ -z $LOBASH_VERSION ]]
 
@@ -51,11 +54,9 @@ lobash_path_q=$(printf %q "$lobash_path")
   . "$lobash_path"
   )
 
-
   # except: version not change
   (
   . "$lobash_path"
-  [[ -n $LOBASH_VERSION ]]
   LOBASH_VERSION=530000
   previous_version=$LOBASH_VERSION
   . "$lobash_path"
@@ -71,6 +72,7 @@ lobash_path_q=$(printf %q "$lobash_path")
   [[ $vout != *"lo.version_ge() {"* ]]
 }
 
+# shellcheck disable=SC1090,SC2030,SC2031
 @test "if newer verision lobash sourced then load second loading and return 0." {
   [[ -z $LOBASH_VERSION ]]
 
