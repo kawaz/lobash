@@ -15,17 +15,16 @@ teardown() {
   rm -rf "${tmp_PATH?}"
 }
 
-# shellcheck disable=SC2155
-@test "If execute lobash.sh, it must be failed." {
+@test "When execute lobash.sh, it failed." {
   # execute absolute path
   ! "$tmp_PATH/lobash.sh"
   # execute in $PATH
   ! lobash.sh
   # status code is 1
   lobash.sh || [[ $? == 1 ]]
+}
 
-  local out=$(lobash.sh)
-  local err=$(lobash.sh 2>&1)
-  [[ -z $out ]]
-  [[ $err == "Don't execute"* ]]
+@test "When execute lobash.sh, output message to stderr" {
+  [[ -z $(lobash.sh) ]]
+  [[ $(lobash.sh 2>&1) == "Don't execute"* ]]
 }
