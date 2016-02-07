@@ -1,7 +1,5 @@
 #!/usr/bin/env bats
-lobash_path="$BATS_TEST_DIRNAME/../lobash.sh"
-# shellcheck source=../lobash.sh
-. "$lobash_path"
+load helper/lobash
 
 @test "version_ge <no_args> is false." {
   ! lo.version_ge
