@@ -1,6 +1,8 @@
 #!/usr/bin/env bats
-lobash_path="$BATS_TEST_DIRNAME/../lobash.sh"
-lobash_path_q=$(printf %q "$lobash_path")
+setup() {
+  lobash_path="$BATS_TEST_DIRNAME/../lobash.sh"
+  lobash_path_q=$(printf %q "$lobash_path")
+}
 
 # shellcheck disable=SC1090
 @test 'When lobash sourced, it set $LOBASH_VERSION.' {
