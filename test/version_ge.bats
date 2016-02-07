@@ -1,5 +1,13 @@
 #!/usr/bin/env bats
-load helper/lobash
+
+# shellcheck disable=SC2034
+setup() {
+  declare -p BATS_TEST_DIRNAME >>/tmp/test 2>&1
+  lobash_path="$BATS_TEST_DIRNAME/../lobash.sh"
+  lobash_path_q=$(printf %q "$lobash_path")
+  # shellcheck source=../lobash.sh
+  . "$lobash_path"
+}
 
 @test "version_ge <no_args> is false." {
   ! lo.version_ge

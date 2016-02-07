@@ -1,4 +1,5 @@
 #!/usr/bin/env bats
+
 setup() {
   lobash_path="$BATS_TEST_DIRNAME/../lobash.sh"
   lobash_path_q=$(printf %q "$lobash_path")

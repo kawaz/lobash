@@ -1,7 +1,7 @@
 #!/usr/bin/env bats
-lobash_path="$BATS_TEST_DIRNAME/../lobash.sh"
 
 setup() {
+  lobash_path="$BATS_TEST_DIRNAME/../lobash.sh"
   old_PATH=$PATH
   tmp_PATH="${BATS_TMPDIR}/${BATS_TEST_NAME}/${BATS_TEST_NUMBER}"
   mkdir -p "$tmp_PATH"
