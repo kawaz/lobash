@@ -3,6 +3,8 @@ cache_dir=$1; shift
 tmp_dir=$1; shift
 if [[ -z $cache_dir || -z $tmp_dir || $# == 0 ]]; then
   echo "Usage: $0 dest_dir tmp_dir version [version..]" >&2
+  echo "list remote:" >&2
+  curl -sL http://ftp.gnu.org/gnu/bash/|grep -oE 'bash-[0-9][0-9]*\.[0-9a-z]+'|sed 's/.*-//'|sort|uniq >&2
   exit 1
 fi
 
