@@ -30,6 +30,9 @@ before_script:
 script:
   - echo $BASH_VERSION
   - bats --tap test
+  - bats --tap test/lodash_executed.bats
+  - bats --tap test/lodash_sourced.bats
+  - bats --tap test/version_ge.bats
 
 notifications:
   email:
