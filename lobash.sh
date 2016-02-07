@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 v="1.0.0" \
   eval "[[ -n '$LOBASH_VERSION' ]] && lo.version_ge $LOBASH_VERSION \$v && return; LOBASH_VERSION=\$v"
 
